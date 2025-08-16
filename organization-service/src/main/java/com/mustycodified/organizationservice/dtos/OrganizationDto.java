@@ -9,30 +9,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-@Schema(
-        description = "Organization DTO"
-)
+@Schema(description = "Organization DTO")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrganizationDto {
     private Long id;
 
-
-    @Schema(
-            description = "Organization name"
-    )
+    @Schema(description = "Organization name")
     private String organizationName;
 
-    @Schema(
-            description = "Organization description"
-    )
+    @Schema(description = "Organization description")
     private String organizationDescription;
 
-    @Schema(
-            description = "Organization code"
-    )
+    @Schema(description = "Organization code")
+
     private String organizationCode;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 

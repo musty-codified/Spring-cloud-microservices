@@ -21,4 +21,14 @@ public class DepartmentDto {
 
     @Schema(description ="Department code")
     private String departmentCode;
+
+
+    public String toString() {
+        return "DepartmentDto{" +
+                "id='" + id + '\'' +
+                ", departmentDescription='" + departmentDescription + '\'' +
+                ", departmentName='" + departmentName + '\'' +
+                ", departmentCode='" + departmentCode + '\'' +
+                '}';
+    }
 }

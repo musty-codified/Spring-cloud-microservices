@@ -18,10 +18,6 @@ public class OrganizationServiceImpl implements OrganizationService {
 
     @Override
     public OrganizationDto saveOrganization(OrganizationDto organizationDto) {
-
-        //Validate Organization
-
-        //Remember Organization
         Organization organization = new Organization();
         organization.setOrganizationCode(organizationDto.getOrganizationCode());
         organization.setOrganizationDescription(organizationDto.getOrganizationDescription());

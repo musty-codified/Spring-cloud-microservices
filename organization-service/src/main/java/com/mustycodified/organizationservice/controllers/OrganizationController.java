@@ -12,27 +12,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-@Tag(
-        name="Organization Microservice - Organization Controller",
-        description = "organization Controller Exposes REST APIs endpoint for Organization Microservice"
-)
+@Tag(name="Organization Microservice", description = "Exposes REST APIs endpoint for Organization Microservice")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/organizations")
 public class OrganizationController {
     private final OrganizationService organizationService;
 
-    @Operation(
-            summary = "Store Organization REST API",
-            description = "Creates and stores an organization object in the database"
-
-    )
-
-    @ApiResponse(
-            responseCode = "201",
-            description = "HTTP Status 201 created"
-    )
-
+    @Operation(summary = "Store Organization REST API", description = "Creates and stores an organization in the database")
+    @ApiResponse(responseCode = "201", description = "HTTP Status 201 created")
     @PostMapping("/save")
     public ResponseEntity<OrganizationDto> createOrganization(@RequestBody OrganizationDto organizationDto){
        OrganizationDto dto = organizationService.saveOrganization(organizationDto);
@@ -40,16 +28,8 @@ public class OrganizationController {
     }
 
 
-    @Operation(
-            summary = "Get Organization REST API",
-            description = "Retrieves an organization object from the database"
-
-    )
-
-    @ApiResponse(
-            responseCode = "200",
-            description = "HTTP Status 200 OK"
-    )
+    @Operation(summary = "Get Organization REST API", description = "Retrieves an organization object from the database")
+    @ApiResponse(responseCode = "200", description = "HTTP Status 200 OK")
     @GetMapping("/{organizationCode}")
     public ResponseEntity<OrganizationDto> findOrganization(@PathVariable String organizationCode){
         OrganizationDto dto = organizationService.findOrganizationByCode(organizationCode);

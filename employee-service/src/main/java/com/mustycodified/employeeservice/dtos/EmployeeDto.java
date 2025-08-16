@@ -26,4 +26,18 @@ public class EmployeeDto {
 
     @Schema(description = "Organization code")
     private String organizationCode;
+
+
+
+    public String toString() {
+        return "EmployeeDto{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", departmentCode='" + departmentCode + '\'' +
+                ", organizationCode='" + organizationCode + '\'' +
+                '}';
+    }
 }
+

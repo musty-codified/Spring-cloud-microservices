@@ -1,10 +1,7 @@
 package com.mustycodified.employeeservice.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
@@ -24,5 +21,17 @@ public class Employee {
     private String departmentCode;
     private String organizationCode;
 
+
+
+    public String toString() {
+        return "Employee{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", departmentCode='" + departmentCode + '\'' +
+                ", organizationCode='" + organizationCode + '\'' +
+                '}';
+    }
 
 }
